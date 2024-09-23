@@ -374,7 +374,11 @@ from .models import User
 @api_view(['POST'])
 def send_otp(request):
     email = request.data.get('email')
-    user = User.objects.get(email=email)
+    # Use filter() and first() to avoid MultipleObjectsReturned
+    user = User.objects.filter(email=email).first()  # Returns None if no user is found
+    if user is None:
+        return Response({"error": "User does not exist."}, status=status.HTTP_404_NOT_FOUND)
+
     otp = random.randint(1000, 9999)
     user.otp = otp
     user.save()
@@ -393,9 +397,14 @@ def send_otp(request):
 def verify_otp(request):
     email = request.data.get('email')
     otp = request.data.get('otp')
-    user = User.objects.get(email=email)
+    
+    user = User.objects.filter(email=email).first()  # Use first() to avoid exceptions
+    if user is None:
+        return Response({'error': 'User does not exist.'}, status=status.HTTP_404_NOT_FOUND)
+    
     if user.otp == otp:
         user.is_verified = True
         user.save()
         return Response({'message': 'OTP verified'}, status=status.HTTP_200_OK)
+    
     return Response({'error': 'Invalid OTP'}, status=status.HTTP_400_BAD_REQUEST)
