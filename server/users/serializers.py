@@ -46,8 +46,8 @@ from .models import Slider
 class SliderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Slider
-        fields = ['id', 'image', 'createdAt']
-        read_only_fields = ['id', 'createdAt']
+        fields = ['id', 'image']  # Include fields that exist in your Slider model
+
 
 from rest_framework import serializers
 from .models import Job
@@ -63,7 +63,12 @@ from .models import Team
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = '__all__'
+        fields = ['image']
+
+    def validate_image(self, value):
+        if not value:
+            raise serializers.ValidationError("Image must be provided.")
+        return value
 
 # users/serializers.py
 
@@ -74,3 +79,12 @@ class FAQSerializer(serializers.ModelSerializer):
     class Meta:
         model = FAQ
         fields = ['id', 'question', 'answer', 'created_at']
+
+from rest_framework import serializers
+from .models import User
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'country', 'otp', 'is_active', 'is_verified', 'is_staff', 'is_admin', 'is_superuser']
+
