@@ -1,0 +1,4 @@
+node_modules/
+.env         # to ignore environment variable files
+build/       # to ignore build directories
+dist/        # to ignore distribution directories

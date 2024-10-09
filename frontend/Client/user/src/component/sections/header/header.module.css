@@ -1,0 +1,123 @@
+/* Header CSS */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.notification_bar {
+    background-color: #9f29bd; 
+    color: white;
+    padding: 40px 0px 9px 0px;
+    text-align: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.learn_more_link {
+    color: white;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5rem 6rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo_div {
+    margin-right: 1.5rem;
+}
+
+.logo {
+    width: 45px;
+    padding-top: 5px;
+    height: auto;
+}
+
+.navLink {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    align-items: center;
+}
+
+.navLink li {
+    font-size: 17px;
+    font-weight: 500;
+    padding: 10px 10px 0px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.navLink li a {
+    color: #333;
+}
+
+.navLink li:hover {
+    color: #0066CC;
+    border-bottom: 2px solid #0066CC;
+}
+
+.dropdown_arrow {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.btn Button {
+    font-weight: 600;
+}
+
+/* Dropdown CSS */
+.dropdown {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 160px;
+    z-index: 1000;
+    display: none;
+}
+
+.navLink li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    padding: 10px 15px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.dropdown li:hover {
+    background-color: #f2f2f2;
+    border: none;
+}
+
+.dropdown li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.user_icon{
+    font-size: 39px;
+    color: #9f29bd;
+    border: 3px solid;
+    border-radius: 50%;
+}

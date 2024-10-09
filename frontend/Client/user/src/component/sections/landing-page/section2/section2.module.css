@@ -1,0 +1,35 @@
+.section2 {
+    text-align: center;
+    margin: 4rem 10rem;
+}
+
+.section2 h2{
+    font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 5rem;
+}
+
+.clients_partners {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    margin-top: 4rem;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+ 
+.clients_partners img {
+    max-height: 50px;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+  

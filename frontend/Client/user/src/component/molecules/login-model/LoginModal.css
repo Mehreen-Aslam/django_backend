@@ -1,0 +1,149 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+}
+
+/* Modal Content */
+.modal-content1 {
+  z-index: 1100;
+  position: fixed;
+  top: 450%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  padding: 35px 0px;
+  width: 90%;
+  max-width: 450px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Form */
+.login-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-container > form {
+  width: 100%;
+  max-width: 350px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.login-form > div {
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Subtitle Below Login */
+.subtitle {
+  font-size: 15px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.login-form > input,
+#passwordInput > input {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  color: #363636;
+  width: 100%;
+}
+
+/* Input Focus State */
+.login-form > input:focus,
+#passwordInput > input:focus {
+  outline: none;
+  border: 1px solid #1171d1;
+  box-shadow: 0 0 5px rgba(0, 102, 204, 0.2);
+}
+
+/* Password Input Container */
+#passwordInput {
+  position: relative;
+}
+
+#passwordInput > input {
+  width: 100%;
+  margin-bottom: -3px;
+}
+
+#toggleIcon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  cursor: pointer;
+}
+
+.login-form > label {
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.login-form > label > input {
+  margin-right: 5px;
+}
+
+.login-form > label > span {
+  float: right;
+}
+
+.login-form > button {
+  margin: 20px 0;
+  padding: 12px;
+  background-color: #9f29bd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-form > small {
+  text-align: center;
+}
+
+.login-form > small > a {
+  color: #9f29bd;
+}
+
+/* Existing styles... */
+
+.alert-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 20px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  z-index: 1000;
+  font-size: 16px;
+}
